@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammad Abdur Rahaman | Web Developer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#6366f1;
+      --secondary:#22d3ee;
+      --dark:#0f172a;
+      --light:#f8fafc;
+      --glass:rgba(255,255,255,0.15);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{
+      background:radial-gradient(circle at top, #1f2933, #020617 70%);
+      color:#e5e7eb;
+      line-height:1.7;
+    }
+
+    /* ================= NAVBAR ================= */
+    nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(2,6,23,0.85);
+      backdrop-filter:blur(16px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.7);
+    }
+    nav ul{
+      max-width:1100px;margin:auto;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:15px 20px;list-style:none;
+    }
+    nav a{text-decoration:none;color:#e5e7eb;font-weight:600;transition:.3s;}
+    nav .links a{margin-left:20px;font-weight:500;}
+    nav .links a:hover{color:#22d3ee;transform:translateY(-3px);}
+
+    /* ================= NAVBAR LOGO ================= */
+    .logo img{
+      width:52px;height:52px;object-fit:contain;
+      filter:drop-shadow(0 0 14px rgba(99,102,241,0.8));
+      transition:transform 0.5s ease, filter 0.5s ease;
+      cursor:pointer;
+    }
+    .logo img:hover{
+      transform:scale(1.15) rotate(-5deg);
+      filter:drop-shadow(0 0 22px rgba(34,211,238,1));
+    }
+
+    /* ================= HERO ================= */
+    header{
+      min-height:95vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;color:white;
+      background:linear-gradient(145deg,#020617,#1e293b);
+      position:relative;overflow:hidden;
+    }
+    header::after{
+      content:"";position:absolute;inset:0;
+      background:url('https://www.transparenttextures.com/patterns/cubes.png');
+      opacity:.12;
+    }
+    header .hero{position:relative;z-index:2;}
+    header h1{font-size:3.2rem; text-shadow:0 0 20px rgba(99,102,241,0.5);}
+    header p{max-width:650px;margin:20px auto 35px;font-size:1.1rem;opacity:.95;}
+    header a{
+      display:inline-block;
+      background:white;color:var(--primary);
+      padding:16px 36px;border-radius:50px;
+      font-weight:700;text-decoration:none;
+      box-shadow:0 20px 50px rgba(0,0,0,.3);
+      transition:.3s;
+    }
+    header a:hover{
+      transform:translateY(-4px) scale(1.05);
+      background:linear-gradient(135deg,#020617,#1f2937);
+      box-shadow:0 25px 60px rgba(99,102,241,0.45);
+    }
+
+    /* ================= SECTIONS ================= */
+    section{padding:100px 20px;max-width:1100px;margin:auto;}
+    h2{text-align:center;font-size:2.6rem;margin-bottom:70px;color:#f8fafc;text-shadow:0 0 10px rgba(99,102,241,0.3);}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+    .about img{width:100%;border-radius:30px;box-shadow:0 25px 80px rgba(34,211,238,0.3);transition:.4s;}
+    .about img:hover{transform:scale(1.06);box-shadow:0 30px 100px rgba(34,211,238,0.5);}
+
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;}
+    .skill{padding:30px;border-radius:30px;text-align:center;background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);box-shadow:0 20px 60px rgba(0,0,0,0.7);transition:.4s;}
+    .skill:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 30px 80px rgba(34,211,238,0.5);}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;}
+    .project{background:rgba(255,255,255,0.05);border-radius:30px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.75);transition:.4s;}
+    .project:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 30px 90px rgba(34,211,238,0.5);}
+    .project img{width:100%;height:200px;object-fit:cover;transition:.4s;}
+    .project img:hover{transform:scale(1.06);}
+    .project div{padding:30px;}
+
+    .contact{text-align:center;}
+    .contact a{position:relative;display:inline-block;margin:12px;background:linear-gradient(135deg,#020617,#111827);color:#e5e7eb;padding:16px 32px;border-radius:50px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.15);box-shadow:0 20px 50px rgba(0,0,0,.7);transition:.3s;}
+    .contact a:hover{transform:translateY(-4px) scale(1.05);background:linear-gradient(135deg,#020617,#1f2937);box-shadow:0 25px 60px rgba(99,102,241,0.45);}
+    .contact a:first-child{border:1px solid rgba(34,211,238,0.6);box-shadow:0 25px 60px rgba(34,211,238,0.35);}
+
+    footer{text-align:center;padding:40px;background:linear-gradient(135deg,#020617,#020617,#111827);color:#9ca3af;font-size:0.95rem;}
+
+    @media(max-width:768px){header h1{font-size:2.4rem;}.about{grid-template-columns:1fr;} .projects{gap:30px;}}
+
+    /* ================= ANIMATIONS ================= */
+    .fade-up{opacity:0;transform:translateY(40px);transition:0.8s ease;}.fade-up.show{opacity:1;transform:translateY(0);}
+    .fade-left{opacity:0;transform:translateX(-40px);transition:0.8s ease;}.fade-left.show{opacity:1;transform:translateX(0);}
+    .fade-right{opacity:0;transform:translateX(40px);transition:0.8s ease;}.fade-right.show{opacity:1;transform:translateX(0);}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+    header a{animation:float 3s ease-in-out infinite;}
+
+    /* ================= CUSTOM CURSOR ================= */
+    body{cursor:none;}
+    .cursor{position:fixed;width:14px;height:14px;border-radius:50%;background:rgba(99,102,241,0.9);pointer-events:none;transform:translate(-50%,-50%);z-index:9999;transition:transform .08s ease, background .3s ease;box-shadow:0 0 20px rgba(99,102,241,.6);}
+    .cursor-ring{position:fixed;width:36px;height:36px;border-radius:50%;border:2px solid rgba(34,211,238,.6);pointer-events:none;transform:translate(-50%,-50%);z-index:9998;transition:all .15s ease;}
+    a:hover ~ .cursor, button:hover ~ .cursor{transform:translate(-50%,-50%) scale(1.4);background:#22d3ee;}
+  </style>
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <ul>
+    <li class="logo">
+      <img src="../image/LOGO.png" alt="Logo">
+    </li>
+    <li class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="hero fade-up">
+    <h1>Mohammad Abdur Rahaman</h1>
+    <p>Creative Web Developer crafting modern, responsive & user‑friendly websites</p>
+    <a href="#contact">Hire Me</a>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="fade-up">
+  <h2>About Me</h2>
+  <div class="about">
+    <div>
+      <p>I’m a passionate web developer from Bangladesh who loves building beautiful, fast, and user‑focused web experiences. I enjoy turning complex problems into simple, elegant solutions.</p>
+      <p>My goal is to become a professional full‑stack developer and work on projects that make a real‑world impact.</p>
+    </div>
+    <img src="../image/ME.png" alt="Developer" />
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade-up">
+  <h2>My Skills</h2>
+  <div class="skills">
+    <div class="skill">HTML5</div>
+    <div class="skill">CSS3</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">React</div>
+    <div class="skill">Tailwind CSS</div>
+    <div class="skill">Node.js</div>
+    <div class="skill">Express.js</div>
+    <div class="skill">Git & GitHub</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-up">
+  <h2>Featured Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" />
+      <div>
+        <h3>Portfolio Website</h3>
+        <p>Modern personal portfolio with clean UI and responsive design.</p>
+      </div>
+    </div>
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4" />
+      <div>
+        <h3>Student Management App</h3>
+        <p>Full CRUD system built using React and Node.js.</p>
+      </div>
+    </div>
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" />
+      <div>
+        <h3>E‑commerce UI</h3>
+        <p>Clean and modern e‑commerce frontend experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-up">
+  <h2>Let’s Work Together</h2>
+  <div class="contact">
+    <p>Have a project in mind? Let’s make it real.</p>
+    <a href="mailto:abdurrahaman.dev@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Mohammad%2C%0D%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.%0D%0A%0D%0ARegards%2C">Email Me</a>
+    <a href="https://www.linkedin.com/in/mohammad-abdur-rahaman?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Mohammad Abdur Rahaman • All Rights Reserved</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right')
+    .forEach(el => observer.observe(el));
+
+  const cursor = document.querySelector('.cursor');
+  const ring = document.querySelector('.cursor-ring');
+
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = ring.style.left = e.clientX + 'px';
+    cursor.style.top = ring.style.top = e.clientY + 'px';
+  });
+
+  document.querySelectorAll('a, button, .skill, .project').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.style.transform = 'translate(-50%,-50%) scale(1.5)';
+      ring.style.borderColor = '#6366f1';
+      el.style.transform += ' scale(1.05)';
+      el.style.boxShadow = '0 25px 60px rgba(34,211,238,0.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.style.transform = 'translate(-50%,-50%) scale(1)';
+      ring.style.borderColor = 'rgba(34,211,238,.6)';
+      el.style.transform = el.style.transform.replace(' scale(1.05)','');
+      if(el.classList.contains('skill')){
+        el.style.boxShadow = '0 20px 50px rgba(0,0,0,0.6)';
+      } else if(el.classList.contains('project')){
+        el.style.boxShadow = '0 25px 60px rgba(0,0,0,0.7)';
+      } else if(el.tagName === 'A'){
+        el.style.boxShadow = '0 15px 40px rgba(0,0,0,.6)';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
