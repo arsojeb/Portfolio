@@ -36,34 +36,26 @@
 
     /* ================= CUSTOM CURSOR ================= */
     .cursor{
-      width:10px;
-      height:10px;
+      width:10px;height:10px;
       background:var(--secondary);
       border-radius:50%;
       position:fixed;
-      top:0;
-      left:0;
       pointer-events:none;
       z-index:9999;
     }
 
     .cursor-ring{
-      width:36px;
-      height:36px;
+      width:36px;height:36px;
       border:2px solid var(--secondary);
       border-radius:50%;
       position:fixed;
-      top:0;
-      left:0;
       pointer-events:none;
       z-index:9998;
     }
 
     /* ================= NAVBAR ================= */
     nav{
-      position:sticky;
-      top:0;
-      z-index:100;
+      position:sticky;top:0;z-index:100;
       background:rgba(0,0,0,0.6);
       backdrop-filter:blur(14px);
     }
@@ -80,25 +72,23 @@
 
     nav img{
       height:42px;
+      object-fit:contain;
     }
 
     nav .links a{
       margin-left:22px;
       color:var(--light);
       text-decoration:none;
-      font-weight:500;
       position:relative;
     }
 
     nav .links a::after{
       content:"";
       position:absolute;
-      left:0;
-      bottom:-6px;
-      width:0;
-      height:2px;
+      left:0;bottom:-6px;
+      width:0;height:2px;
       background:var(--secondary);
-      transition:0.3s;
+      transition:.3s;
     }
 
     nav .links a:hover::after{width:100%;}
@@ -110,62 +100,41 @@
       align-items:center;
       justify-content:center;
       text-align:center;
-      background:linear-gradient(135deg,#020617,#020617 40%,#020617);
       position:relative;
-      overflow:hidden;
     }
 
     header::before{
       content:"";
       position:absolute;
       inset:0;
-      background:radial-gradient(circle at center,rgba(99,102,241,0.15),transparent 70%);
+      background:radial-gradient(circle at center,rgba(99,102,241,.15),transparent 70%);
     }
 
-    header .hero{
-      position:relative;
-      z-index:2;
-    }
+    .hero{position:relative;z-index:2;}
 
     header h1{font-size:3rem;}
-
-    header p{
-      max-width:600px;
-      margin:15px auto 30px;
-      opacity:.85;
-    }
+    header p{max-width:600px;margin:15px auto 30px;opacity:.85;}
 
     /* ================= BUTTON ================= */
     .btn{
       display:inline-block;
       background:#000;
-      color:white;
+      color:#fff;
       padding:14px 34px;
       border-radius:40px;
+      border:1px solid rgba(255,255,255,.2);
       text-decoration:none;
-      font-weight:600;
-      border:1px solid rgba(255,255,255,0.2);
-      box-shadow:0 15px 40px rgba(0,0,0,0.6);
-      transition:transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s;
+      transition:.4s;
     }
 
     .btn:hover{
       transform:translateY(-6px) scale(1.05);
-      box-shadow:0 25px 70px rgba(34,211,238,0.4);
+      box-shadow:0 25px 70px rgba(34,211,238,.4);
     }
 
     /* ================= SECTIONS ================= */
-    section{
-      padding:90px 20px;
-      max-width:1100px;
-      margin:auto;
-    }
-
-    h2{
-      text-align:center;
-      font-size:2.4rem;
-      margin-bottom:60px;
-    }
+    section{padding:90px 20px;max-width:1100px;margin:auto;}
+    h2{text-align:center;font-size:2.4rem;margin-bottom:60px;}
 
     /* ================= ABOUT ================= */
     .about{
@@ -178,7 +147,7 @@
     .about img{
       width:100%;
       border-radius:30px;
-      box-shadow:0 30px 80px rgba(0,0,0,0.7);
+      box-shadow:0 30px 80px rgba(0,0,0,.7);
     }
 
     /* ================= SKILLS ================= */
@@ -191,16 +160,14 @@
     .skill{
       padding:30px;
       border-radius:25px;
-      text-align:center;
       background:var(--glass);
-      backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,0.08);
-      transition:transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s;
+      text-align:center;
+      transition:.4s;
     }
 
     .skill:hover{
       transform:translateY(-10px) scale(1.05);
-      box-shadow:0 25px 70px rgba(34,211,238,0.35);
+      box-shadow:0 25px 70px rgba(34,211,238,.35);
     }
 
     /* ================= PROJECTS ================= */
@@ -211,31 +178,26 @@
     }
 
     .project{
-      background:#020617;
       border-radius:28px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 25px 70px rgba(0,0,0,0.7);
-      transition:transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s;
+      background:#020617;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.4s;
     }
 
     .project:hover{
       transform:translateY(-12px) scale(1.03);
-      box-shadow:0 35px 90px rgba(99,102,241,0.35);
+      box-shadow:0 35px 90px rgba(99,102,241,.35);
     }
 
     .project img{
       width:100%;
       height:190px;
       object-fit:cover;
+      background:#111; /* fallback */
     }
 
     .project div{padding:25px;}
-
-    /* ================= CONTACT ================= */
-    .contact{text-align:center;}
-
-    .contact a{margin:12px;}
 
     /* ================= FOOTER ================= */
     footer{
@@ -246,8 +208,8 @@
     }
 
     /* ================= ANIMATION ================= */
-    .fade-up{opacity:0;transform:translateY(40px);transition:.8s ease;}
-    .fade-up.show{opacity:1;transform:translateY(0);}
+    .fade-up{opacity:0;transform:translateY(40px);transition:.8s;}
+    .fade-up.show{opacity:1;transform:none;}
 
     @media(max-width:768px){
       header h1{font-size:2.2rem;}
@@ -262,7 +224,7 @@
 
 <nav>
   <ul>
-    <li><img src="./image/LOGO.png" alt="Logo"></li>
+    <li><img src="image/logo.png" alt="Logo"></li>
     <li class="links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -275,7 +237,7 @@
 <header>
   <div class="hero fade-up">
     <h1>Mohammad Abdur Rahaman</h1>
-    <p>Creative Web Developer crafting modern, responsive & user‑friendly websites</p>
+    <p>Creative Web Developer crafting modern, responsive & user-friendly websites</p>
     <a href="#contact" class="btn">Hire Me</a>
   </div>
 </header>
@@ -284,24 +246,10 @@
   <h2>About Me</h2>
   <div class="about">
     <div>
-      <p>I’m a passionate web developer from Bangladesh who loves building modern web experiences.</p>
-      <p>My goal is to become a professional full‑stack developer and work on impactful projects.</p>
+      <p>I’m a passionate web developer from Bangladesh.</p>
+      <p>My goal is to become a professional full-stack developer.</p>
     </div>
-    <img src="image/ME.png" alt="Me" />
-  </div>
-</section>
-
-<section id="skills" class="fade-up">
-  <h2>My Skills</h2>
-  <div class="skills">
-    <div class="skill">HTML5</div>
-    <div class="skill">CSS3</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">React</div>
-    <div class="skill">Tailwind CSS</div>
-    <div class="skill">Node.js</div>
-    <div class="skill">Express.js</div>
-    <div class="skill">Git & GitHub</div>
+    <img src="image/me.png" alt="Me">
   </div>
 </section>
 
@@ -310,38 +258,29 @@
   <div class="projects">
 
     <div class="project">
-      <img src="image/Puppymart.png" alt="Pappy Mart" />
+      <img src="image/puppymart.png" alt="Pappy Mart">
       <div>
         <h3>Pappy Mart</h3>
-        <p>An e‑commerce style web application focused on modern UI, product listing, and smooth user experience.</p>
+        <p>E-commerce focused web application.</p>
       </div>
     </div>
 
     <div class="project">
-      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309" alt="Blood Donor" />
+      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
       <div>
         <h3>Blood Donor</h3>
-        <p>A social impact platform that helps connect blood donors with people in need quickly and efficiently.</p>
+        <p>Platform to connect blood donors.</p>
       </div>
     </div>
 
     <div class="project">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="App Mart" />
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
       <div>
         <h3>App Mart</h3>
-        <p>An app marketplace concept showcasing apps with clean layouts, filtering, and modern card design.</p>
+        <p>Modern app marketplace UI.</p>
       </div>
     </div>
 
-  </div>
-</section>
-
-<section id="contact" class="fade-up">
-  <h2>Let’s Work Together</h2>
-  <div class="contact">
-    <a class="btn" href="mailto:abdurrahaman.dev@gmail.com">Email</a>
-    <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-    <a class="btn" href="https://github.com" target="_blank">GitHub</a>
   </div>
 </section>
 
@@ -350,38 +289,25 @@
 </footer>
 
 <script>
-  /* Intersection Observer */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.2 });
+  const observer=new IntersectionObserver(e=>{
+    e.forEach(i=>i.isIntersecting&&i.target.classList.add("show"))
+  },{threshold:.2});
+  document.querySelectorAll(".fade-up").forEach(e=>observer.observe(e));
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  const cursor=document.querySelector(".cursor");
+  const ring=document.querySelector(".cursor-ring");
+  let x=0,y=0,rx=0,ry=0;
 
-  /* Custom Cursor */
-  const cursor = document.querySelector('.cursor');
-  const ring = document.querySelector('.cursor-ring');
-
-  let mouseX = 0, mouseY = 0;
-  let ringX = 0, ringY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+  window.addEventListener("mousemove",e=>{
+    x=e.clientX;y=e.clientY;
+    cursor.style.transform=`translate(${x}px,${y}px)`
   });
 
-  function animateRing(){
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    ring.style.transform = `translate(${ringX - 18}px, ${ringY - 18}px)`;
-    requestAnimationFrame(animateRing);
-  }
-
-  animateRing();
+  (function animate(){
+    rx+=(x-rx)*.12; ry+=(y-ry)*.12;
+    ring.style.transform=`translate(${rx-18}px,${ry-18}px)`;
+    requestAnimationFrame(animate);
+  })();
 </script>
 
 </body>
